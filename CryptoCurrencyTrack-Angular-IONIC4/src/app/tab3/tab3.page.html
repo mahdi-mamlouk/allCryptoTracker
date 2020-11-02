@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-toolbar color="primary" class="ion-text-center">
+      <ion-title>Converter</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-grid>
+      <ion-row justify-content-center >
+          <ion-item>
+              
+              <ion-input type=number [(ngModel)]="val" value="1"></ion-input>
+           
+               
+              <ion-select [(ngModel)]="crypto" (ionChange)="convert()" >
+                <ion-select-option value="BTC">BTC</ion-select-option>
+                <ion-select-option value="ETH">ETH</ion-select-option>
+                <ion-select-option value="LTC">LTC</ion-select-option>
+                <ion-select-option value="XRP">XRP</ion-select-option>
+             
+              </ion-select>
+            = 
+            <ion-input *ngIf="currency$ | async as cu"   class="ion-text-center" value="{{cu.ask*val}}  ">
+                                 
+                 </ion-input>
+              
+              <ion-select [(ngModel)]="fiat" (ionChange)="convert()">
+                <ion-select-option value="USD">USD</ion-select-option>
+                <ion-select-option value="EUR">EUR</ion-select-option>
+                <ion-select-option value="TND">TND</ion-select-option>
+             
+              </ion-select>
+            </ion-item>
+      </ion-row>
+     
+      
+    </ion-grid>
+  
+    
+  </ion-content>
+  
+  <ion-footer>
+    
+  </ion-footer>
